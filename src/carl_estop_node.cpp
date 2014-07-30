@@ -33,15 +33,14 @@ carl_estop::carl_estop()
 void carl_estop::estop(void)
 {
 	ros::Time current_time = ros::Time::now();
-	ROS_INFO("Previous: %f", last_receive.toSec());
 	
 	//check it has not been too long without a check
 	if((current_time.toSec() - last_receive.toSec()) > stop_time_delay){
 		if(!spoke)
 		{
 			spoke = true; 
-			ROS_ERROR("Stopping! Connection Lost.");
-			//			system("espeak \"Stopping! Connection Lost.\"");
+			ROS_ERROR("Stopping! Estop Connection Lost.");
+			system("espeak \"Stopping! Estop Connection Lost.\"");
 		}
 		//stop the robot
 		actionClient->waitForServer();
@@ -53,8 +52,8 @@ void carl_estop::estop(void)
 	} else {
 		if(spoke)
 		{
-			ROS_INFO("Connection Resumed.");
-			system("espeak \"Connection Resumed.\"");	
+			ROS_INFO("Estop Connection Resumed.");
+			system("espeak \"Estop Connection Resumed.\"");	
 			spoke = false;
 			rmp.cmd_id = ros_ethernet_rmp::RMPCommand::RMP_CFG_CMD_ID;
 			rmp.arg1 = ros_ethernet_rmp::RMPCommand::RMP_CMD_SET_OPERATIONAL_MODE;
