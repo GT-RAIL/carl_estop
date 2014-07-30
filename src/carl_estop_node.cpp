@@ -9,8 +9,8 @@ carl_estop::carl_estop()
 
 	//grab the parameters
 	ros::NodeHandle private_node_handle_("~");
-	private_node_handle_.param<double>("stop_time_delay", stop_time_delay, 1.0);
-	private_node_handle_.param<double>("check_frequency", check_frequency, 2.0);
+	private_node_handle_.param<double>("stop_time_delay", stop_time_delay, 1.5);
+	private_node_handle_.param<double>("check_frequency", check_frequency, 3.0);
 	
 	spoke = false;
 
@@ -22,6 +22,7 @@ carl_estop::carl_estop()
     
     // Connect to the move_base action server
     actionClient = new ActionClient("move_base", true); // create a thread to handle subscriptions.
+    last_receive = ros::Time::now();
 }
 
 /*
@@ -32,6 +33,7 @@ carl_estop::carl_estop()
 void carl_estop::estop(void)
 {
 	ros::Time current_time = ros::Time::now();
+	ROS_INFO();
 	
 	//check it has not been too long without a check
 	if((current_time.toSec() - last_receive.toSec()) > stop_time_delay){

@@ -15,7 +15,7 @@ int main (int argc, char **argv)
 
 	//grab the parameters
 	ros::NodeHandle private_node_handle_("~");
-	private_node_handle_.param<double>("send_frequency", send_frequency, 2.0);
+	private_node_handle_.param<double>("send_frequency", send_frequency, 3.0);
 
 	//setup the publisher
 	estop_pub = node.advertise<std_msgs::Empty>("carl_estop", 1);
