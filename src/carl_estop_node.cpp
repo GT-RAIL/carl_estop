@@ -19,14 +19,13 @@ carl_estop::carl_estop()
     
     // Connect to the move_base action server
     actionClient = new ActionClient("move_base", true); // create a thread to handle subscriptions.
-	
 }
 
 /*
-   * helper function to determine if calcel goal actions should be taken
-   *
-   * \param msg the empty message
-   */
+ * helper function to determine if cancel goal actions should be taken
+ *
+ * \param msg the empty message
+ */
 void carl_estop::estop(void)
 {
 	ros::Time current_time = ros::Time::now();
@@ -87,8 +86,6 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		loop_rate.sleep();
 	}
-
-	return 0;
 
 	return EXIT_SUCCESS;
 }

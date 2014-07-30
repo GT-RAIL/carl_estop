@@ -7,12 +7,12 @@
  * and sends messages to the /move_base actionlib to stop the current execution of a goal.
  *
  * \author Russell Toris, WPI - rctoris@wpi.edu *
- * \author Chris Dunkers, WPI - spkordell@wpi.edu
+ * \author Chris Dunkers, WPI - cmdunkers@wpi.edu
  * \date July 24, 2014
  */
 
-#ifndef CARL_ESTOP_TELEOP_H_
-#define CARL_ESTOP_TELEOP_H_
+#ifndef CARL_ESTOP_H_
+#define CARL_ESTOP_H_
 
 #include "ros/ros.h"
 #include "std_msgs/Empty.h"
