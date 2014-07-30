@@ -18,6 +18,7 @@
 #include "std_msgs/Empty.h"
 #include <actionlib/client/simple_action_client.h>
 #include <move_base_msgs/MoveBaseAction.h>
+#include <ros_ethernet_rmp/RMPCommand.h>
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ActionClient;
 
@@ -40,6 +41,9 @@ class carl_estop
     // the ros subscriber
     ros::Subscriber estop_sub;
 
+    // ros publisher to rmp
+    ros::Publisher rmp_pub;
+
     //variables for the parameter values to be stored in
     double stop_time_delay;
     double check_frequency;
@@ -49,7 +53,10 @@ class carl_estop
     bool spoke;
 
     // A handle for the move_base action client thread
-    ActionClient* actionClient;  
+    ActionClient* actionClient; 
+
+    //message for the rmp
+    ros_ethernet_rmp::RMPCommand rmp; 
 
     /*
      * carl_estop topic callback function.
