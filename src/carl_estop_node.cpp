@@ -33,7 +33,7 @@ carl_estop::carl_estop()
 void carl_estop::estop(void)
 {
 	ros::Time current_time = ros::Time::now();
-	ROS_INFO();
+	ROS_INFO("HERE");
 	
 	//check it has not been too long without a check
 	if((current_time.toSec() - last_receive.toSec()) > stop_time_delay){
@@ -62,6 +62,7 @@ void carl_estop::estop(void)
 			rmp_pub.publish(rmp);
 		}
 	}
+	last_receive = current_time;
 }
 
 /*
@@ -95,8 +96,8 @@ int main(int argc, char **argv)
 	ros::Rate loop_rate(carl.get_frequency());
 	while (ros::ok()) 
 	{
-		carl.estop();
 		ros::spinOnce();
+		carl.estop();
 		loop_rate.sleep();
 	}
 
