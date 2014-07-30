@@ -45,7 +45,7 @@ void carl_estop::estop(void)
 		if(spoke)
 		{
 			ROS_INFO("Connection Resumed.");
-			system("espeak \"Resuming Normal Operation.\"");	
+			system("espeak \"Connection Resumed.\"");	
 			spoke = false;
 		}
 	}
