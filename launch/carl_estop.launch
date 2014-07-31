@@ -1,11 +1,9 @@
 <launch>    
-    <arg name="stop_time_delay" value="1.0" />
-    <arg name="check_frequency" value="2.0" />
+  <arg name="stop_time_delay" value="1.0" />
+  <arg name="check_frequency" value="2.0" />
     
-    <node pkg="carl_estop" type="carl_estop_node" name="carl_estop_node" output="screen">
-        <param name="stop_time_delay" type="double" value="$(arg stop_time_delay)" />
-        <param name="check_frequency" type="double" value="$(arg check_frequency)" />
-    </node>
-
+  <node pkg="carl_estop" type="carl_estop_node" name="carl_estop_node" output="screen">
+    <param name="stop_time_delay" type="double" value="$(arg stop_time_delay)" />
+    <param name="check_frequency" type="double" value="$(arg check_frequency)" />
+  </node>
 </launch>
-  

@@ -1,8 +1,7 @@
 <launch>    
-    <arg name="send_frequency" value="2.0" />
+  <arg name="send_frequency" value="2.0" />
     
-    <node pkg="carl_estop" type="pc_estop_node" name="pc_estop_node" output="screen">
-        <param name="send_frequency" type="double" value="$(arg send_frequency)" />
-    </node>
-
+  <node pkg="carl_estop" type="pc_estop_node" name="pc_estop_node" output="screen">
+    <param name="send_frequency" type="double" value="$(arg send_frequency)" />
+  </node>
 </launch>
