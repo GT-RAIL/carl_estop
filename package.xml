@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>carl_estop</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>Software Emergency Stop for the CARL Robot</description>
 
   <author email="cmdunkers@wpi.edu">Chris Dunkers</author>
