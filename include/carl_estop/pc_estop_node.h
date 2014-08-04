@@ -1,4 +1,4 @@
-/*
+/*!
  * \pc_estop_node.h
  * \brief Allows for stopping of CARL.
  *
@@ -13,8 +13,8 @@
 #ifndef CARL_ESTOP_TELEOP_H_
 #define CARL_ESTOP_TELEOP_H_
 
-#include "ros/ros.h"
-#include "std_msgs/Empty.h"
+#include <ros/ros.h>
+#include <std_msgs/Empty.h>
 
 // the ros subscriber
 ros::Publisher estop_pub;

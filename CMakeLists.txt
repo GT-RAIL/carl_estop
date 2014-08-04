@@ -4,7 +4,7 @@ project(carl_estop)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS actionlib roscpp std_msgs move_base_msgs ros_ethernet_rmp)
+find_package(catkin REQUIRED COMPONENTS actionlib roscpp std_msgs move_base_msgs rmp_msgs)
 
 ###################################################
 ## Declare things to be passed to other projects ##
