@@ -2,6 +2,12 @@
 Changelog for package carl_estop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.2 (2014-08-06)
+------------------
+* moved to new messages
+* updated travis
+* Contributors: Russell Toris
+
 0.0.1 (2014-07-31)
 ------------------
 * cleanup
