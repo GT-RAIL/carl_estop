@@ -1,4 +1,4 @@
-carl_estop [![Build Status](https://api.travis-ci.org/WPI-RAIL/carl_estop.png)](https://travis-ci.org/WPI-RAIL/carl_estop)
+carl_estop [![Build Status](https://api.travis-ci.org/GT-RAIL/carl_estop.png)](https://travis-ci.org/GT-RAIL/carl_estop)
 ==========
 
 #### Software Emergency Stop for the CARL Robot
