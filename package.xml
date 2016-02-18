@@ -6,12 +6,13 @@
 
   <author email="cmdunkers@wpi.edu">Chris Dunkers</author>
   <maintainer email="rctoris@wpi.edu">Russell Toris</maintainer>
+  <maintainer email="dekent@gatech.edu">David Kent</maintainer>
 
   <license>BSD</license>
 
   <url type="website">http://ros.org/wiki/carl_estop</url>
-  <url type="bugtracker">https://github.com/WPI-RAIL/carl_estop/issues</url>
-  <url type="repository">https://github.com/WPI-RAIL/carl_estop</url>
+  <url type="bugtracker">https://github.com/GT-RAIL/carl_estop/issues</url>
+  <url type="repository">https://github.com/GT-RAIL/carl_estop</url>
   
   <buildtool_depend>catkin</buildtool_depend>
 
