@@ -31,12 +31,14 @@ add_executable(carl_estop_node src/carl_estop_node.cpp)
 target_link_libraries(carl_estop_node
   ${catkin_LIBRARIES}
 )
+add_dependencies(carl_estop_node rmp_msgs_gencpp)
 
 ## Declare a cpp executable
 add_executable(pc_estop_node src/pc_estop_node.cpp)
 target_link_libraries(pc_estop_node
   ${catkin_LIBRARIES}
 )
+add_dependencies(pc_estop_node rmp_msgs_gencpp)
 
 #############
 ## Install ##
