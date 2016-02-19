@@ -4,7 +4,7 @@ project(carl_estop)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS actionlib roscpp std_msgs move_base_msgs ros_ethernet_rmp)
+find_package(catkin REQUIRED COMPONENTS actionlib roscpp std_msgs move_base_msgs rmp_msgs)
 
 ###################################################
 ## Declare things to be passed to other projects ##
@@ -31,12 +31,14 @@ add_executable(carl_estop_node src/carl_estop_node.cpp)
 target_link_libraries(carl_estop_node
   ${catkin_LIBRARIES}
 )
+add_dependencies(carl_estop_node rmp_msgs_gencpp)
 
 ## Declare a cpp executable
 add_executable(pc_estop_node src/pc_estop_node.cpp)
 target_link_libraries(pc_estop_node
   ${catkin_LIBRARIES}
 )
+add_dependencies(pc_estop_node rmp_msgs_gencpp)
 
 #############
 ## Install ##

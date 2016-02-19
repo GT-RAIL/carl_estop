@@ -16,7 +16,7 @@ carl_estop::carl_estop()
   estop_sub = node.subscribe("carl_estop", 1000, &carl_estop::update_time, this);
 
   //setup the publisher to the segway
-  rmp_pub = node.advertise<ros_ethernet_rmp::RMPCommand>("rmp_command", 10);
+  rmp_pub = node.advertise<rmp_msgs::RMPCommand>("rmp_command", 10);
 
   // Connect to the move_base action server
   actionClient = new ActionClient("move_base", true); // create a thread to handle subscriptions.
@@ -39,9 +39,9 @@ void carl_estop::estop(void)
     //stop the robot
     actionClient->waitForServer();
     actionClient->cancelAllGoals();
-    rmp.cmd_id = ros_ethernet_rmp::RMPCommand::RMP_CFG_CMD_ID;
-    rmp.arg1 = ros_ethernet_rmp::RMPCommand::RMP_CMD_SET_OPERATIONAL_MODE;
-    rmp.arg2 = ros_ethernet_rmp::RMPCommand::STANDBY_REQUEST;
+    rmp.cmd_id = rmp_msgs::RMPCommand::RMP_CFG_CMD_ID;
+    rmp.arg1 = rmp_msgs::RMPCommand::RMP_CMD_SET_OPERATIONAL_MODE;
+    rmp.arg2 = rmp_msgs::RMPCommand::STANDBY_REQUEST;
     rmp_pub.publish(rmp);
   }
   else
@@ -51,9 +51,9 @@ void carl_estop::estop(void)
       ROS_INFO("Estop Connection Resumed.");
       system("espeak \"Estop Connection Resumed.\"");
       spoke = false;
-      rmp.cmd_id = ros_ethernet_rmp::RMPCommand::RMP_CFG_CMD_ID;
-      rmp.arg1 = ros_ethernet_rmp::RMPCommand::RMP_CMD_SET_OPERATIONAL_MODE;
-      rmp.arg2 = ros_ethernet_rmp::RMPCommand::TRACTOR_REQUEST;
+      rmp.cmd_id = rmp_msgs::RMPCommand::RMP_CFG_CMD_ID;
+      rmp.arg1 = rmp_msgs::RMPCommand::RMP_CMD_SET_OPERATIONAL_MODE;
+      rmp.arg2 = rmp_msgs::RMPCommand::TRACTOR_REQUEST;
       rmp_pub.publish(rmp);
     }
   }

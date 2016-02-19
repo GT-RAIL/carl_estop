@@ -18,7 +18,7 @@
 #include <std_msgs/Empty.h>
 #include <actionlib/client/simple_action_client.h>
 #include <move_base_msgs/MoveBaseAction.h>
-#include <ros_ethernet_rmp/RMPCommand.h>
+#include <rmp_msgs/RMPCommand.h>
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ActionClient;
 
@@ -57,7 +57,7 @@ private:
   ActionClient* actionClient;
 
   //message for the rmp
-  ros_ethernet_rmp::RMPCommand rmp;
+  rmp_msgs::RMPCommand rmp;
 
   /*!
    * carl_estop topic callback function.
