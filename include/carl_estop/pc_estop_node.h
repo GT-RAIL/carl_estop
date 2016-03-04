@@ -5,7 +5,7 @@
  * pc_estop_node creates a ROS node that allows a user to stop CARL. 
  * and sends messages to the /carl_estop topic.
  *
- * \author Russell Toris, WPI - rctoris@wpi.edu
+ * \author Russell Toris, WPI - russell.toris@gmail.com
  * \author Chris Dunkers, WPI - spkordell@wpi.edu
  * \date July 24, 2014
  */

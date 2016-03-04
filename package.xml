@@ -5,7 +5,6 @@
   <description>Software Emergency Stop for the CARL Robot</description>
 
   <author email="cmdunkers@wpi.edu">Chris Dunkers</author>
-  <maintainer email="rctoris@wpi.edu">Russell Toris</maintainer>
   <maintainer email="dekent@gatech.edu">David Kent</maintainer>
 
   <license>BSD</license>
